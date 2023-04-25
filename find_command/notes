@@ -1,0 +1,98 @@
+find .
+shows all contents from pwd and downwards
+
+find . -name file_name
+all contents matched with the file_name
+
+--------------------
+-type
+--------------------
+
+find ./project  -type f -exec echo {} \;
+show all the file name only
+
+find . -type f  -not -name "*.sh"
+find all the file which doesn't have .sh
+
+find . -type f  ! -name "*.sh"
+not can also be written as !
+
+
+
+
+------------------
+-empty
+------------------
+find . -empty
+find all the empty files
+
+find . -type f -empty  -exec rm {} \;
+delete all empty files
+
+
+
+---------------------
+-size
+---------------------
+find . -type f -size +1M -exec wc -c {} \;
+find all the files bigger than 1 Mb
+
+
+
+--------------------
+-not
+--------------------
+find . -type f -not -empty
+find all the files which are not empty
+
+
+
+
+
+-----------------------
+-perm
+--------------------
+find ./project  -perm 755 -exec echo {} \;
+show only the exexcutable file
+
+find ./project  -perm 644 -exec echo {} \;
+show alll the contents that are not executable
+
+
+
+
+---   ---  ---
+rwx   r-x r-x
+111   101 101
+
+
+
+--------------
+-links n
+--------------
+
+
+
+
+
+
+
+------------------
+-atime
+-----------------
+
+
+
+
+
+--------------------
+-Btime
+--------------------
+
+
+
+
+
+-----------------------
+-ctime
+--------------

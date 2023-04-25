@@ -1,0 +1,47 @@
+What is a function ?
+--------------------------------------------------
+
+ function is a mechanism that maps one value set to another
+ or
+ function is a block of code that does some specific job
+
+ In bash funtion is kind of a process but not really a process. 
+
+ We can get the return value of a bash function from $?  .  return value of 1 byte
+
+
+ Scope of a function
+--------------------------------------------------
+function demo_functon(){
+
+local VARIABLE 
+echo $VARIAblE
+
+return 0
+}
+
+demo_function
+
+
+The value of this VARIABLE can only be used inside this demo_function. Though we can acess a global variable from a bash function
+
+
+function demo_function(){
+
+local VARIABLE 
+echo $VARIAblE
+
+echo "inside $OUTSIDE_VARIABLE"
+echo $1
+return 0
+}
+
+OUTSIDE_VARIABLE="hello"
+demo_function "STEP"
+
+#this $1 is different from the $1 inside of the function
+echo $1 
+
+
+
+

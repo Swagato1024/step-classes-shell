@@ -1,0 +1,15 @@
+AGENDA
+--------------------------------------------------
+
+1. create backup.sh which will give customized error if some wrong path is passed .
+backup.sh will take backup location as an optional argument . default backup location is ~/.backup
+
+ if[ $STRING ] checks STRINGS != NULL
+ if [ !$STRING ] echo " string is empty "
+
+
+2. create my own backup command and add it to PATH .
+
+3. do same with restore.sh . default restore location is PWD.
+
+4. while restoring , create a directory  as the archive name and put archive there.

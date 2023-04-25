@@ -1,0 +1,7 @@
+#! zsh
+
+SIDE1=$1
+SIDE2=$2
+SIDE3=$3
+
+dc -e "$SIDE1 $SIDE2 $SIDE3 + + 2 / d sr $SIDE1 - lr $SIDE2  - lr $SIDE3 - lr * * *  v  p "  

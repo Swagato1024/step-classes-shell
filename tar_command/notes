@@ -1,0 +1,49 @@
+tar command with -C . 
+-C : change directory
+
+
+Backup
+
+# Every thing including hidden files of pwd will be archived in archive_timestamp.tar.gz
+tar cvfz ~/backup/archive_name_timestamp.tar.gz   .
+
+# Now I want to archive a directory named to_archive . "to_archive" is not my pwd
+
+1. tar cvfz ~/backup/archive_name_timestamp.tar.gz  ~/project/tar_command/to_archive
+
+In this case archive_name_timestamp.tar.gz will be created .
+But when we will extract archive_name_timestamp.tar.gz , we can see that our archive file has been created inside /User/swagatochakraborty/project/tar_command . To avoid this, we will use -C
+
+
+
+ 
+2. tar cvfz ~/backup/archive_name_timestamp.tar.gz  -C ~/project/tar_command/to_archive .
+
+ This means change directoy to ~/project/project/tar_command/to_archive and then archive all the contents of that directory
+
+
+ Restore
+
+ 1. tar xfvz ~/backup/archive_name_timestamp.tar.gz 
+  
+  extract the archive file in pwd
+
+
+
+ 2. tar xfvz ~/backup/archive_name_timestamp.tar.gz -C ~/project/restore_path
+   
+   restore the archive file at restore path.
+
+
+
+
+Agenda of 23/02/2023
+
+1. make the backup file path optional
+
+2. check the given path of backup directory and to archive path are valid or not
+
+3. write script for restoring
+
+4. check valid path for restoring
+

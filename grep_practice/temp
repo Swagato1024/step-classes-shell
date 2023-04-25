@@ -1,0 +1,33 @@
+How many movies has SRK acted in?
+The year where SRK acted in the most number of movies and the number of movies he acted in that year.
+List in alphabetical order all the directors that SRK has acted with.
+List all directors that SRK has worked for more than once
+Which is the most popular letter that SRK films begin with? Provide a command that gives both the count and the letter.
+List all the Shah Rukh Khan movies in the order of the year in which they were released. If a year has more than one movie, then it should be listed in reverse alphabetical order
+How many movies has SRK acted in where his character was named "Raj" (Not Raju or Raja, just Raj. Naam to suna hi hoga)
+
+Not all of these may require grep
+
+
+
+----------------------------------------ANSWER---------------------------------------
+
+1. cut -d"," -f3 srk_movies | grep -ic "actor" 
+87
+
+2. cut -d"," -f2,3 srk_movies |grep -i "actor" |cut -d"," -f1| sort -n | uniq -c | sort -rn | head -n1
+   7 1995
+
+
+3. cut -d"," -f3- srk_movies | grep -i "^\"*actor" | grep -o ",[^,]*$" | cut -d"\!" -f2 | tr -d "," | sort -b 
+
+
+4.cut -d"," -f3- srk_movies | grep -i "^\"*actor" | grep -o ",[^,]*$" | cut -d"\!" -f2 |tr -d "," | sort -b | uniq -dc
+
+5.cut -d"," -f1 srk_movies | tr -d "\"" | cut -c1  | sort | uniq -c| sort -r -k2 -t" " | head -n1
+  14 D
+
+6. tail -n+2 srk_movies | cut -d"," -f1-2 | sort -t"," -k2,2n -k1,1r
+
+7.grep -oc "Raj\s* [^,]*,[^,]*$" srk_movies 
+       9

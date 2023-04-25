@@ -1,0 +1,47 @@
+File system 
+
+Table          INODE_ID
+.....          ........
+file_name1      2012
+filename2       2023
+
+Soft Links
+................
+ls -s
+
+in case of soft links , our new file gets new INODE_Id
+
+ls -il -- shows INODE_ID
+
+while linking a file provide the abs path of our source file
+
+if we delete the original file, our newly created linked file will not work
+
+
+Hard Links
+.............
+in case of hard link the same INODE_ID is assigned to the new file .
+
+in INODE how many files are hard link to that file is maintained. when that counter becomes zero , file gets deleted
+
+so, if there are two hard link to a Inode , and we delete one of them , we can still use that file 
+
+in case of mv
+
+mv file1 file2
+
+now file1 and file2 has the same Inode_id.
+
+before mv
+
+file1    2324
+
+after mv
+
+file2   2324
+
+
+....................................................
+
+in every file system there is a special space where we store INODEs
+

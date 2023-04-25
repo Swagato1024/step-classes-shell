@@ -1,0 +1,42 @@
+----------------------------
+source
+-------------------------
+source file_name
+
+
+
+---------------------------
+export
+---------------------------
+export X=1
+X will be exported to the child processes of current process
+
+only the value of X value is shared with the child process not the memory location of X
+
+-------------------
+bash&
+-------------------
+run a bash in the background
+
+----------
+fg
+-----------
+to run the background processes as foreground process
+
+
+-------------
+set
+-------------
+
+---------------
+autojump
+---------------
+j directory name 
+
+autojump uses zsh history
+
+
+
+install  powerlevel10k
+
+

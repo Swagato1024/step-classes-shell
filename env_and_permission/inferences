@@ -1,0 +1,45 @@
+----------zsh is a process----------
+swagatochakraborty@Swagatos-MacBook-Pro ~ % cat | sed "s/^/echo .... /g" | zsh
+riya
+this
+.... riya
+.... this
+
+
+--------------------Play with Environment Variable-------------------- 
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % X=10 ; Y=20 
+swagatochakraborty@Swagatos-MacBook-Pro ~ % dc -e "$Y $X / p"
+output: 2
+2
+
+
+
+
+echo "$X"  inside "" $will expand but * . will not expand
+
+
+-------------------- Permissions-------------------- 
+
+chmod +- [rwx] file_name
+
+--------------------Add directory to $PATH-------------------- 
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % pwd
+/Users/swagatochakraborty
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % PATH="/Users/swagatochakraborty:$PATH"
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % echo $PATH                            
+/Users/swagatochakraborty:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+-------------------- Removing the path-------------------- 
+ 
+swagatochakraborty@Swagatos-MacBook-Pro ~ % echo $PATH | cut -d":" -f2-
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+swagatochakraborty@Swagatos-MacBook-Pro ~ % PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
